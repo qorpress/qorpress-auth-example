@@ -1,11 +1,12 @@
 FROM golang:1.14-alpine AS builder
 
-RUN apk add --no-cache make git openssl ca-certificates
+RUN apk add --no-cache git openssl ca-certificates
 
 COPY .  /go/src/github.com/qorpress/qorpress-auth-example
 WORKDIR /go/src/github.com/qorpress/qorpress-auth-example
 
 RUN cd /go/src/github.com/qorpress/qorpress-auth-example \
+	&& go get github.com/Masterminds/glide \
 	&& go get -v \
  	&& go build -v
 

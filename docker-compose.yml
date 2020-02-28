@@ -2,9 +2,9 @@
 version: "3.7"
 services:
 
-  web:
+  app:
     image: qorpress/qorpress-auth-example
-    container_name: qorpress-auth
+    container_name: qorpress-auth-example
     build:
       context: .
       dockerfile: Dockerfile
