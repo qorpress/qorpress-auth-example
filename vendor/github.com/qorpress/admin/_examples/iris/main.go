@@ -3,7 +3,7 @@ package main
 import (
 	"github.com/jinzhu/gorm"
 	_ "github.com/mattn/go-sqlite3"
-	"github.com/qor/admin"
+	"github.com/qorpress/admin"
 
 	"github.com/kataras/iris/v12"
 )

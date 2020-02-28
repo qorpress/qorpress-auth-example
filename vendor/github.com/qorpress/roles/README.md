@@ -1,14 +1,14 @@
 # Roles
 
-Roles is an [authorization](https://en.wikipedia.org/wiki/Authorization) library for [Golang](http://golang.org/), it also integrates nicely with [QOR Admin](http://github.com/qor/admin).
+Roles is an [authorization](https://en.wikipedia.org/wiki/Authorization) library for [Golang](http://golang.org/), it also integrates nicely with [QOR Admin](http://github.com/qorpress/admin).
 
-[![GoDoc](https://godoc.org/github.com/qor/roles?status.svg)](https://godoc.org/github.com/qor/roles)
+[![GoDoc](https://godoc.org/github.com/qorpress/roles?status.svg)](https://godoc.org/github.com/qorpress/roles)
 
 ## Usage
 
 ### Permission Modes
 
-Permission modes are really the *roles* in [Roles](https://github.com/qor/roles). [Roles](https://github.com/qor/roles) has [5 default permission modes](https://github.com/qor/roles/blob/master/permission.go#L8-L12):
+Permission modes are really the *roles* in [Roles](https://github.com/qorpress/roles). [Roles](https://github.com/qorpress/roles) has [5 default permission modes](https://github.com/qorpress/roles/blob/master/permission.go#L8-L12):
 
 - roles.Read
 - roles.Update
@@ -68,21 +68,21 @@ cond2(yes)->allowed1
 cond2(no)->denied1
 ```
 
-Please note that, when using [Roles](https://github.com/qor/roles) with [L10n](http://github.com/qor/l10n). The
+Please note that, when using [Roles](https://github.com/qorpress/roles) with [L10n](http://github.com/qorpress/l10n). The
 
 ```go
 // allows the admin role through and rejects ALL other roles.
 roles.Allow(roles.READ, "admin")
 ```
 
-might be invalid because [L10n](http://github.com/qor/l10n) defined a [permission system](http://github.com/qor/l10n#editable-locales) that applys new roles to the current user. For example, There is a user with role "manager", the `EditableLocales` in the [L10n](http://github.com/qor/l10n) permission system returns true in current locale. Then this user actually has two roles "manager" and "locale_admin". because [L10n](http://github.com/qor/l10n) set `resource.Permission.Allow(roles.CRUD, "locale_admin")` to the resource. So the user could access this resource by the role "locale\_admin".
+might be invalid because [L10n](http://github.com/qorpress/l10n) defined a [permission system](http://github.com/qorpress/l10n#editable-locales) that applys new roles to the current user. For example, There is a user with role "manager", the `EditableLocales` in the [L10n](http://github.com/qorpress/l10n) permission system returns true in current locale. Then this user actually has two roles "manager" and "locale_admin". because [L10n](http://github.com/qorpress/l10n) set `resource.Permission.Allow(roles.CRUD, "locale_admin")` to the resource. So the user could access this resource by the role "locale\_admin".
 
-So you either use `Deny` instead which means swtich "white list" to "black list" or make the `EditableLocales` always return blank array which means disabled [L10n](http://github.com/qor/l10n) permission system.
+So you either use `Deny` instead which means swtich "white list" to "black list" or make the `EditableLocales` always return blank array which means disabled [L10n](http://github.com/qorpress/l10n) permission system.
 
 ### Define Permission
 
 ```go
-import "github.com/qor/roles"
+import "github.com/qorpress/roles"
 
 func main() {
   // Allow Permission
@@ -103,7 +103,7 @@ func main() {
 ### Check Permission
 
 ```go
-import "github.com/qor/roles"
+import "github.com/qorpress/roles"
 
 func main() {
   permission := roles.Allow(roles.CRUD, "admin").Deny(roles.Create, "manager").Allow(roles.Read, "visitor")
@@ -134,10 +134,10 @@ func main() {
 
 ### Register Roles
 
-When checking permissions, you will need to know current user's *roles* first. This could quickly get out of hand if you have defined many *roles* based on lots of conditions - so [Roles](https://github.com/qor/roles) provides some helper methods to make it easier:
+When checking permissions, you will need to know current user's *roles* first. This could quickly get out of hand if you have defined many *roles* based on lots of conditions - so [Roles](https://github.com/qorpress/roles) provides some helper methods to make it easier:
 
 ```go
-import "github.com/qor/roles"
+import "github.com/qorpress/roles"
 
 func main() {
   // Register roles based on some conditions

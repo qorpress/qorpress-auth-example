@@ -2,7 +2,7 @@
 
 Instantly create a beautiful, cross platform, configurable Admin Interface and API for managing your data in minutes.
 
-[![GoDoc](https://godoc.org/github.com/qor/admin?status.svg)](https://godoc.org/github.com/qor/admin)
+[![GoDoc](https://godoc.org/github.com/qorpress/admin?status.svg)](https://godoc.org/github.com/qorpress/admin)
 
 **For security issues, please send us an email to security@getqor.com and give us time to respond BEFORE posting as an issue or reporting on public forums.**
 
@@ -26,7 +26,7 @@ import (
   "net/http"
   "github.com/jinzhu/gorm"
   _ "github.com/mattn/go-sqlite3"
-  "github.com/qor/admin"
+  "github.com/qorpress/admin"
 )
 
 // Create a GORM-backend model
@@ -69,7 +69,7 @@ func main() {
 ## Live DEMO
 
 * Live Demo [http://demo.getqor.com/admin](http://demo.getqor.com/admin)
-* Source Code of Live Demo [https://github.com/qor/qor-example](https://github.com/qor/qor-example)
+* Source Code of Live Demo [https://github.com/qorpress/qor-example](https://github.com/qorpress/qor-example)
 
 ## Documentation
 

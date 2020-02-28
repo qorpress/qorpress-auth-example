@@ -1,6 +1,6 @@
 // Package responder respond differently according to request's accepted mime type
 //
-// Github: http://github.com/qor/responder
+// Github: http://github.com/qorpress/responder
 package responder
 
 import (

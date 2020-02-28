@@ -9,7 +9,7 @@ It wrapped other libs like [SCS](https://github.com/alexedwards/scs), [Gorilla S
 ```go
 import (
 	"github.com/gorilla/sessions"
-	"github.com/qor/session/gorilla"
+	"github.com/qorpress/session/gorilla"
 	// "github.com/alexedwards/scs/engine/memstore"
 )
 
@@ -76,7 +76,7 @@ type ManagerInterface interface {
 
 ## QOR Integration
 
-We have created a default session manager in package `github.com/qor/session/manager`, which is used in some QOR libs like QOR Admin, QOR Auth by default to manage session, flash messages.
+We have created a default session manager in package `github.com/qorpress/session/manager`, which is used in some QOR libs like QOR Admin, QOR Auth by default to manage session, flash messages.
 
 It is defined like below:
 
@@ -88,7 +88,7 @@ You should change it to your own session storage or use your own secret code.
 
 ```go
 import (
-	"github.com/qor/session/manager"
+	"github.com/qorpress/session/manager"
 )
 
 func main() {

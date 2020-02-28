@@ -11,7 +11,7 @@ import (
 	"time"
 
 	"github.com/jinzhu/gorm"
-	"github.com/qor/responder"
+	"github.com/qorpress/responder"
 )
 
 // Controller admin controller

@@ -8,6 +8,7 @@ import (
 	"reflect"
 	"time"
 
+	"github.com/k0kubun/pp"
 	"github.com/qorpress/auth"
 	"github.com/qorpress/auth/auth_identity"
 	"github.com/qorpress/auth/claims"
@@ -37,9 +38,14 @@ var (
 var DefaultConfirmationMailer = func(email string, context *auth.Context, claims *claims.Claims, currentUser interface{}) error {
 	claims.Subject = "confirm"
 
+	pp.Println("email:", email)
+	pp.Println("currentUser: ", currentUser)
+	// pp.Println("auth.Context:", context)
+
 	return context.Auth.Mailer.Send(
 		mailer.Email{
 			TO:      []mail.Address{{Address: email}},
+			From:        &mail.Address{Address: "jinzhu@example.org"},
 			Subject: ConfirmationMailSubject,
 		}, mailer.Template{
 			Name:    "auth/confirmation",
@@ -56,6 +62,7 @@ var DefaultConfirmationMailer = func(email string, context *auth.Context, claims
 				qry := confirmURL.Query()
 				qry.Set("token", context.SessionStorer.SignedToken(claims))
 				confirmURL.RawQuery = qry.Encode()
+				pp.Println("confirmURL.String(): ", confirmURL.String())
 				return confirmURL.String()
 			},
 		}))

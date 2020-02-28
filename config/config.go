@@ -20,6 +20,8 @@ import (
 	"github.com/qorpress/redirect_back"
 	"github.com/qorpress/session/manager"
 	"github.com/unrolled/render"
+	// "github.com/qorpress/i18n"
+	// "github.com/qorpress/i18n/backends/yaml"
 )
 
 /*
@@ -117,6 +119,10 @@ func init() {
 
 	dialer := gomail.NewDialer(Config.SMTP.Host, portSmtp, Config.SMTP.User, Config.SMTP.Password)
 	sender, err := dialer.Dial()
+	if err != nil {
+		panic(err)
+	}
+	pp.Println(sender)
 
 	Mailer = mailer.New(&mailer.Config{
 		Sender: gomailer.New(&gomailer.Config{Sender: sender}),

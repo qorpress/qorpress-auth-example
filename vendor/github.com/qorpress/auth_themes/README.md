@@ -1,8 +1,8 @@
 # Auth Themes
 
-Auth Themes is a collection of themes for [Auth](https://github.com/qor/auth), which is a Golang authentication framework.
+Auth Themes is a collection of themes for [Auth](https://github.com/qorpress/auth), which is a Golang authentication framework.
 
-It aimis to reduce repeated code, make you be able to integrate [Auth](https://github.com/qor/auth) into your application with few lines of code.
+It aimis to reduce repeated code, make you be able to integrate [Auth](https://github.com/qorpress/auth) into your application with few lines of code.
 
 ## Usage
 
@@ -11,7 +11,7 @@ Each theme might has different usage, please refer their own documents, but most
 Here is an example for how to use theme `clean`
 
 ```go
-import  "github.com/qor/auth_themes/clean"
+import  "github.com/qorpress/auth_themes/clean"
 
 func main() {
   Auth = clean.New(&auth.Config{
@@ -37,11 +37,11 @@ func New(config *auth.Config) *auth.Auth {
   if config == nil {
     config = &auth.Config{}
   }
-  config.ViewPaths = append(config.ViewPaths, "github.com/qor/auth_themes/clean/views")
+  config.ViewPaths = append(config.ViewPaths, "github.com/qorpress/auth_themes/clean/views")
 
   Auth := auth.New(config)
   return Auth
 }
 ```
 
-Refer Theme [Clean](https://github.com/qor/auth_themes/tree/master/clean) for more details
+Refer Theme [Clean](https://github.com/qorpress/auth_themes/tree/master/clean) for more details

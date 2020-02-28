@@ -5,7 +5,7 @@ Cache Store provide a way to cache web content to accelerate the speed of your s
 ## Memcached Cache Store Usage
 
 ```go
-import "github.com/qor/cache/memcached"
+import "github.com/qorpress/cache/memcached"
 
 func main() {
   client := memcached.New(&Config{Hosts: []string{"127.0.0.1:11211"}, NameSpace: "qor_demo_v1"})
@@ -36,7 +36,7 @@ func main() {
 ## Memory Cache Store Usage
 
 ```go
-import "github.com/qor/cache/memory"
+import "github.com/qorpress/cache/memory"
 
 func main() {
   client := memory.New()
@@ -47,7 +47,7 @@ func main() {
 ## Redis Cache Store Usage
 
 ```go
-import "github.com/qor/cache/redis"
+import "github.com/qorpress/cache/redis"
 
 func main() {
   client = New(&redis.Options{Addr: "127.0.0.1:6379",

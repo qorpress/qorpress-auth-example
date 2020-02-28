@@ -7,10 +7,10 @@ import (
 	"net/http"
 	"path/filepath"
 
-	"github.com/qor/qor"
-	"github.com/qor/qor/utils"
-	"github.com/qor/roles"
-	"github.com/qor/session"
+	"github.com/qorpress/qor"
+	"github.com/qorpress/qor/utils"
+	"github.com/qorpress/roles"
+	"github.com/qorpress/session"
 )
 
 // Context admin context, which is used for admin controller

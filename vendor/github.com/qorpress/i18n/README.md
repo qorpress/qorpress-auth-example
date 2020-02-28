@@ -2,7 +2,7 @@
 
 I18n provides internationalization support for your application, it supports 2 kinds of storages(backends), the database and file system.
 
-[![GoDoc](https://godoc.org/github.com/qor/i18n?status.svg)](https://godoc.org/github.com/qor/i18n)
+[![GoDoc](https://godoc.org/github.com/qorpress/i18n?status.svg)](https://godoc.org/github.com/qorpress/i18n)
 
 ## Usage
 
@@ -11,9 +11,9 @@ Initialize I18n with the storage mode. You can use both storages together, the e
 ```go
 import (
   "github.com/jinzhu/gorm"
-  "github.com/qor/i18n"
-  "github.com/qor/i18n/backends/database"
-  "github.com/qor/i18n/backends/yaml"
+  "github.com/qorpress/i18n"
+  "github.com/qorpress/i18n/backends/database"
+  "github.com/qorpress/i18n/backends/yaml"
 )
 
 func main() {
@@ -43,15 +43,15 @@ en-US:
     hello: "Hello, world"
 ```
 
-### Use built-in interface for translation management with [QOR Admin](http://github.com/qor/admin)
+### Use built-in interface for translation management with [QOR Admin](http://github.com/qorpress/admin)
 
-I18n has a built-in web interface for translations which is integrated with [QOR Admin](http://github.com/qor/admin).
+I18n has a built-in web interface for translations which is integrated with [QOR Admin](http://github.com/qorpress/admin).
 
 ```go
 Admin.AddResource(I18n)
 ```
 
-Then a page like this will be added to [QOR Admin](http://github.com/qor/admin) interface
+Then a page like this will be added to [QOR Admin](http://github.com/qorpress/admin) interface
 
 Refer the [online demo](http://demo.getqor.com/admin/translations).
 
@@ -146,7 +146,7 @@ I18n.T("en-US", "ordered_params", "string1", "string2") //=> string1 string2 str
 
 ### Inline Edit
 
-You could manage translations' data with [QOR Admin](http://github.com/qor/admin) interface (UI) after registering it into [QOR Admin](http://github.com/qor/admin), however we warn you that it is usually quite hard (and error prone!) to *translate a translation* without knowing its context...Fortunately, the *Inline Edit* feature of [QOR Admin](http://github.com/qor/admin) was developed to resolve this problem!
+You could manage translations' data with [QOR Admin](http://github.com/qorpress/admin) interface (UI) after registering it into [QOR Admin](http://github.com/qorpress/admin), however we warn you that it is usually quite hard (and error prone!) to *translate a translation* without knowing its context...Fortunately, the *Inline Edit* feature of [QOR Admin](http://github.com/qorpress/admin) was developed to resolve this problem!
 
 *Inline Edit* allows administrators to manage translations from the frontend. Similarly to [integrating with Golang Templates](#integrate-with-golang-templates), you need to register a func map for Golang templates to render *inline editable* translations.
 

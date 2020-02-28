@@ -10,9 +10,9 @@ import (
 	"time"
 
 	"github.com/jinzhu/gorm"
-	"github.com/qor/qor"
-	"github.com/qor/qor/resource"
-	"github.com/qor/qor/utils"
+	"github.com/qorpress/qor"
+	"github.com/qorpress/qor/resource"
+	"github.com/qorpress/qor/utils"
 )
 
 // filterRegexp used to parse url query to get filters

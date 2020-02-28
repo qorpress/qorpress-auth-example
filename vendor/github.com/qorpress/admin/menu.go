@@ -3,8 +3,8 @@ package admin
 import (
 	"path"
 
-	"github.com/qor/qor"
-	"github.com/qor/roles"
+	"github.com/qorpress/qor"
+	"github.com/qorpress/roles"
 )
 
 // GetMenus get all sidebar menus for admin

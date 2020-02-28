@@ -6,3 +6,5 @@ vendor/**
 .git/
 .git/*
 .git/**
+Dockerfile
+docker-compose.yml

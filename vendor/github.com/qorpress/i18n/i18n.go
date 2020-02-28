@@ -204,13 +204,13 @@ func RenderInlineEditAssets(isIncludeJQuery bool, isIncludeExtendAssetLib bool) 
 		}
 
 		if isIncludeExtendAssetLib {
-			if extendLib, err := ioutil.ReadFile(filepath.Join(gopath, "src/github.com/qor/i18n/views/themes/i18n/inline-edit-libs.tmpl")); err == nil {
+			if extendLib, err := ioutil.ReadFile(filepath.Join(gopath, "src/github.com/qorpress/i18n/views/themes/i18n/inline-edit-libs.tmpl")); err == nil {
 				content += string(extendLib)
 			} else {
 				hasError = true
 			}
 
-			if css, err := ioutil.ReadFile(filepath.Join(gopath, "src/github.com/qor/i18n/views/themes/i18n/assets/stylesheets/i18n-inline.css")); err == nil {
+			if css, err := ioutil.ReadFile(filepath.Join(gopath, "src/github.com/qorpress/i18n/views/themes/i18n/assets/stylesheets/i18n-inline.css")); err == nil {
 				content += fmt.Sprintf("<style>%s</style>", string(css))
 			} else {
 				hasError = true
@@ -218,7 +218,7 @@ func RenderInlineEditAssets(isIncludeJQuery bool, isIncludeExtendAssetLib bool) 
 
 		}
 
-		if js, err := ioutil.ReadFile(filepath.Join(gopath, "src/github.com/qor/i18n/views/themes/i18n/assets/javascripts/i18n-inline.js")); err == nil {
+		if js, err := ioutil.ReadFile(filepath.Join(gopath, "src/github.com/qorpress/i18n/views/themes/i18n/assets/javascripts/i18n-inline.js")); err == nil {
 			content += fmt.Sprintf("<script type=\"text/javascript\">%s</script>", string(js))
 		} else {
 			hasError = true
@@ -409,7 +409,7 @@ func (i18n *I18n) ConfigureQorResource(res resource.Resourcer) {
 		router.Post(res.ToParam(), controller.Update, &admin.RouteConfig{Resource: res})
 		router.Put(res.ToParam(), controller.Update, &admin.RouteConfig{Resource: res})
 
-		res.GetAdmin().RegisterViewPath("github.com/qor/i18n/views")
+		res.GetAdmin().RegisterViewPath("github.com/qorpress/i18n/views")
 	}
 }
 
