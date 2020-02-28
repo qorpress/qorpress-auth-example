@@ -1,0 +1,16 @@
+---
+version: "3.7"
+services:
+
+  web:
+    image: qorpress/qorpress-auth-example
+    container_name: qorpress-auth
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+    - "9000:9000"
+    volumes:
+    - ./.config/gopress.yml:/opt/qor/.config/gopress.yml
+    command: ["/opt/qor/bin/qorpress-auth-example"]
+    restart: unless-stopped

@@ -100,7 +100,7 @@ func main() {
   router := gin.Default()
   router.Any("/*resources", gin.WrapH(mux))
 
-  router.Run(fmt.Sprintf("%s:%s", "127.0.0.1", "9000"))
+  router.Run(fmt.Sprintf("%s:%s", "", "9000"))
 
   // http.ListenAndServe(":9000", manager.SessionManager.Middleware(RedirectBack.Middleware(mux)))
   // http.ListenAndServe(":9000", manager.SessionManager.Middleware(mux))
