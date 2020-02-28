@@ -2,3 +2,7 @@ vendor
 vendor/
 vendor/*
 vendor/**
+.git
+.git/
+.git/*
+.git/**
