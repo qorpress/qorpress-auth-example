@@ -1,0 +1,263 @@
+hash: d16f8f7cdeeb694f7b20d8764da301c556cb8d3efddcd17a5d42708014463508
+updated: 2020-02-28T15:36:42.360269+01:00
+imports:
+- name: cloud.google.com/go
+  version: 9b1cd44a2d6085f1aa9bb084e26cd07f68e9d2de
+  subpackages:
+  - compute/metadata
+- name: github.com/asaskevich/govalidator
+  version: 475eaeb164960a651e97470412a7d3b0c5036105
+- name: github.com/aws/aws-sdk-go
+  version: 284a491980f8fd38e09dc1c7e996e02aa5ed5b5e
+  subpackages:
+  - aws
+  - aws/arn
+  - aws/awserr
+  - aws/awsutil
+  - aws/client
+  - aws/client/metadata
+  - aws/corehandlers
+  - aws/credentials
+  - aws/credentials/ec2rolecreds
+  - aws/credentials/endpointcreds
+  - aws/credentials/processcreds
+  - aws/credentials/stscreds
+  - aws/csm
+  - aws/defaults
+  - aws/ec2metadata
+  - aws/endpoints
+  - aws/request
+  - aws/session
+  - aws/signer/v4
+  - internal/context
+  - internal/ini
+  - internal/s3err
+  - internal/sdkio
+  - internal/sdkmath
+  - internal/sdkrand
+  - internal/sdkuri
+  - internal/shareddefaults
+  - internal/strings
+  - internal/sync/singleflight
+  - private/protocol
+  - private/protocol/eventstream
+  - private/protocol/eventstream/eventstreamapi
+  - private/protocol/json/jsonutil
+  - private/protocol/query
+  - private/protocol/query/queryutil
+  - private/protocol/rest
+  - private/protocol/restxml
+  - private/protocol/xml/xmlutil
+  - service/s3
+  - service/s3/internal/arn
+  - service/sts
+  - service/sts/stsiface
+- name: github.com/BurntSushi/toml
+  version: 3012a1dbe2e4bd1391d42b32f0577cb7bbc7f005
+- name: github.com/chris-ramon/douceur
+  version: f3463056cd52886eda904655e1940157bf323bd7
+  subpackages:
+  - css
+  - parser
+- name: github.com/dgrijalva/jwt-go
+  version: dc14462fd58732591c7fa58cc8496d6824316a82
+- name: github.com/disintegration/imaging
+  version: 879073f2332fabf5a5faa93986ed41598dcf0b62
+- name: github.com/gin-contrib/sse
+  version: 43f0f29dbd2b3f0feeebff91fd9cda22db296938
+- name: github.com/gin-gonic/gin
+  version: 5f56109bcffd58e851dd186282d8fbd4d0decc82
+  subpackages:
+  - binding
+  - internal/bytesconv
+  - internal/json
+  - render
+- name: github.com/go-gomail/gomail
+  version: 81ebce5c23dfd25c6c67194b37d3dd3f338c98b1
+- name: github.com/golang/protobuf
+  version: d23c5127dc24889085f8ccea5c9d560a57a879d8
+  subpackages:
+  - proto
+- name: github.com/google/go-github
+  version: 921fbd6a5b4ea07bb10df1727b022224295bf1db
+  subpackages:
+  - github
+- name: github.com/google/go-querystring
+  version: c8c88dbee036db4e4808d1f2ec8c2e15e11c3f80
+  subpackages:
+  - query
+- name: github.com/gorilla/context
+  version: 8559d4a6b87e4f517ec1846eb90a192b8748cc89
+- name: github.com/gorilla/css
+  version: 4940b8d7810384b58c15dbf1103a148fdf0761f2
+  subpackages:
+  - scanner
+- name: github.com/gorilla/securecookie
+  version: 61b4ad17eb88d0d1118560d1101176279be2bc88
+- name: github.com/gorilla/sessions
+  version: 15ff3511704639ab26f7843f780c015f4bf49565
+- name: github.com/gosimple/slug
+  version: 853565075b0cefa5c1e4de2f05cf57a4fd90740f
+- name: github.com/jinzhu/configor
+  version: f52abb230c951b14a04e8515ca4e248be7690321
+- name: github.com/jinzhu/copier
+  version: b57f9002281ac48ed8cbc489b1e91121e1a0824c
+- name: github.com/jinzhu/gorm
+  version: 7180bd0f27d167f18c253c32d548c7de3adc6b0d
+- name: github.com/jinzhu/inflection
+  version: 196e6ce06ca4513fbcfcbc35dc15f66074df47c9
+- name: github.com/jinzhu/now
+  version: 7e7333ac029d4aad7e88500a30889fcd22489425
+- name: github.com/jmespath/go-jmespath
+  version: c2b33e8439af944379acbdd9c3a5fe0bc44bd8a5
+- name: github.com/json-iterator/go
+  version: 7acbb404a45be33f136d6f16fe8f86ca30f1008d
+- name: github.com/k0kubun/pp
+  version: 99835366d1cc1593249c150d5c1acfb9036ccb1d
+- name: github.com/mattn/go-colorable
+  version: 4e32bdb9fe4eefa9b10cb112e44debf77784ff7a
+- name: github.com/mattn/go-isatty
+  version: cb30d6282491c185f77d9bec5d25de1bb61a06bc
+- name: github.com/mattn/go-sqlite3
+  version: 67986a7832dcbda29de5c1341b3dec6c6d97511a
+- name: github.com/microcosm-cc/bluemonday
+  version: 0a75d7616912ab9beb9cc6f7283ec1917c61b135
+- name: github.com/modern-go/concurrent
+  version: bacd9c7ef1dd9b15be4a9909b8ac7a4e313eec94
+- name: github.com/modern-go/reflect2
+  version: 94122c33edd36123c84d5368cfb2b69df93a0ec8
+- name: github.com/mrjones/oauth
+  version: 126b3521945043926caf026a3b969659b6a38d23
+- name: github.com/qorpress/admin
+  version: c773fc1f93a83204a35e32f7b9a961349420e1ad
+- name: github.com/qorpress/assetfs
+  version: ff57fdc13a148d39c3e930cb27c7eaf82e376891
+- name: github.com/qorpress/auth
+  version: 8a96278314d05bcd9d36671cf38f0ca6d97d3671
+  subpackages:
+  - auth_identity
+  - claims
+  - providers/facebook
+  - providers/github
+  - providers/google
+  - providers/password
+  - providers/password/encryptor
+  - providers/password/encryptor/bcrypt_encryptor
+  - providers/twitter
+- name: github.com/qorpress/auth_themes
+  version: f26bea6722c15e300dc4b52033ac8d41a6202b51
+  subpackages:
+  - clean
+- name: github.com/qorpress/cache
+  version: 0e0bbdc3c4e872fff763f626f64c772e5d0b44df
+  subpackages:
+  - memory
+- name: github.com/qorpress/i18n
+  version: b0f8fc9d33c3a880cd555b8c9478636700d70642
+  subpackages:
+  - backends/yaml
+- name: github.com/qorpress/location
+  version: 8033cc8c8d4f177e6e61c364083c583666715dc3
+- name: github.com/qorpress/mailer
+  version: f5e300f62538c771d402ebc655a8e47f952f5b92
+  subpackages:
+  - gomailer
+  - logger
+- name: github.com/qorpress/media
+  version: 4e48192b91e80f3dc951a1a38bad5c04fc7dcdc5
+  subpackages:
+  - oss
+- name: github.com/qorpress/middlewares
+  version: 781378b69454a545d08058d8154aca40d079e7ab
+- name: github.com/qorpress/oss
+  version: 5f053816810c6ac69f0eee8ca785d7e1a9f27c6e
+  subpackages:
+  - filesystem
+  - s3
+- name: github.com/qorpress/qor
+  version: 031b9b12d9c5b477ce7e2e404e31d4577dfe0111
+  subpackages:
+  - resource
+  - utils
+- name: github.com/qorpress/redirect_back
+  version: 2404ce847695ba3d4383eed73ca544729fbd810d
+- name: github.com/qorpress/render
+  version: df9e89146c003180f9a4267cf3135fd95aceb6f5
+- name: github.com/qorpress/responder
+  version: bd23c24aea94dc8ce65b511ef595ee8fa07a0045
+- name: github.com/qorpress/roles
+  version: f714803202c8cfc666941ad9ed61977fb1ca8626
+- name: github.com/qorpress/serializable_meta
+  version: b2d3025f33b304d8e6503ca1b962978f630778e4
+- name: github.com/qorpress/session
+  version: 3e3d36b07292f6ddd8047c5ed9003ee61997f4b4
+  subpackages:
+  - gorilla
+  - manager
+- name: github.com/qorpress/validations
+  version: 7896e5a38acdc78617e244dcbca4f0a6bbdea9da
+- name: github.com/rainycape/unidecode
+  version: cb7f23ec59bec0d61b19c56cd88cee3d0cc1870c
+- name: github.com/theplant/cldr
+  version: 9f76f7ce4ee8058b01f92739cf0d0cceaeda3cb2
+- name: github.com/ugorji/go
+  version: 42bc974514ff101a54c6b72a0e4dee29d96c0b26
+  subpackages:
+  - codec
+- name: github.com/unrolled/render
+  version: c524c18295afa687769d69e929289578310c41b8
+- name: golang.org/x/crypto
+  version: 2aa609cf4a9d7d1126360de73b55b6002f9e052a
+  subpackages:
+  - bcrypt
+  - blowfish
+  - cast5
+  - openpgp
+  - openpgp/armor
+  - openpgp/elgamal
+  - openpgp/errors
+  - openpgp/packet
+  - openpgp/s2k
+- name: golang.org/x/image
+  version: 58c23975cae11f062d4b3b0c143fe248faac195d
+  subpackages:
+  - bmp
+  - ccitt
+  - tiff
+  - tiff/lzw
+- name: golang.org/x/net
+  version: 5a598a2470a0279bd28bab287167dc1ef0813153
+  subpackages:
+  - context
+  - context/ctxhttp
+  - html
+  - html/atom
+- name: golang.org/x/oauth2
+  version: bf48bf16ab8d622ce64ec6ce98d2c98f916b6303
+  subpackages:
+  - facebook
+  - google
+  - internal
+  - jws
+  - jwt
+- name: golang.org/x/sys
+  version: cb0a6d8edb6c3528b01a0be84a5fe513dbf880a6
+  subpackages:
+  - unix
+- name: google.golang.org/appengine
+  version: b6ce0843b556e44e6416df5c2fd05db0869cc8d4
+  subpackages:
+  - internal
+  - internal/app_identity
+  - internal/base
+  - internal/datastore
+  - internal/log
+  - internal/modules
+  - internal/remote_api
+  - internal/urlfetch
+  - urlfetch
+- name: gopkg.in/alexcesaro/quotedprintable.v3
+  version: 2caba252f4dc53eaf6b553000885530023f54623
+- name: gopkg.in/yaml.v2
+  version: 53403b58ad1b561927d19068c655246f2db79d48
+testImports: []

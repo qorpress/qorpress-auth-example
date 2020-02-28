@@ -1,0 +1,41 @@
+package: github.com/qorpress/qorpress-auth-example
+ignore:
+- github.com/qor/assetfs
+- github.com/qor/qor
+- github.com/qor/responder
+- github.com/qor/roles
+- github.com/qor/session
+- github.com/go-playground/validator
+import:
+- package: github.com/gin-gonic/gin
+- package: github.com/go-gomail/gomail
+- package: github.com/jinzhu/configor
+- package: github.com/jinzhu/gorm
+- package: github.com/k0kubun/pp
+- package: github.com/mattn/go-sqlite3
+- package: github.com/qorpress/auth
+  subpackages:
+  - auth_identity
+  - providers/facebook
+  - providers/github
+  - providers/google
+  - providers/password
+  - providers/twitter
+- package: github.com/qorpress/auth_themes
+  subpackages:
+  - clean
+- package: github.com/qorpress/location
+- package: github.com/qorpress/mailer
+  subpackages:
+  - gomailer
+- package: github.com/qorpress/media
+  subpackages:
+  - oss
+- package: github.com/qorpress/oss
+  subpackages:
+  - s3
+- package: github.com/qorpress/redirect_back
+- package: github.com/qorpress/session
+  subpackages:
+  - manager
+- package: github.com/unrolled/render
