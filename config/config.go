@@ -7,14 +7,13 @@ import (
 	"github.com/qorpress/mailer/gomailer"
 	"github.com/go-gomail/gomail"
 	"github.com/jinzhu/configor"
-	"github.com/k0kubun/pp"
 	"github.com/qorpress/auth/providers/facebook"
 	"github.com/qorpress/auth/providers/github"
 	"github.com/qorpress/auth/providers/google"
 	"github.com/qorpress/auth/providers/twitter"
 	"github.com/qorpress/location"
 	"github.com/qorpress/mailer"
-	// "github.com/qorpress/mailer/logger"
+	"github.com/qorpress/mailer/logger"
 	"github.com/qorpress/media/oss"
 	"github.com/qorpress/oss/s3"
 	"github.com/qorpress/redirect_back"
@@ -98,8 +97,6 @@ func init() {
 		panic(err)
 	}
 
-	pp.Println(Config)
-
 	location.GoogleAPIKey = Config.ApiKey.GoogleAPIKey
 	location.BaiduAPIKey = Config.ApiKey.BaiduAPIKey
 
@@ -120,14 +117,12 @@ func init() {
 	dialer := gomail.NewDialer(Config.SMTP.Host, portSmtp, Config.SMTP.User, Config.SMTP.Password)
 	sender, err := dialer.Dial()
 	if err != nil {
-		panic(err)
+		Mailer = mailer.New(&mailer.Config{
+			Sender: logger.New(&logger.Config{}),
+		})
+	} else {
+		Mailer = mailer.New(&mailer.Config{
+			Sender: gomailer.New(&gomailer.Config{Sender: sender}),
+		})
 	}
-	pp.Println(sender)
-
-	Mailer = mailer.New(&mailer.Config{
-		Sender: gomailer.New(&gomailer.Config{Sender: sender}),
-	})
-	//Mailer = mailer.New(&mailer.Config{
-	//	Sender: logger.New(&logger.Config{}),
-	//})
 }
