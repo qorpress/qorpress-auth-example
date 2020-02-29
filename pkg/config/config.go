@@ -4,22 +4,22 @@ import (
 	"os"
 	"strconv"
 
-	log "github.com/sirupsen/logrus"
-	"github.com/k0kubun/pp"
-	"github.com/qorpress/mailer/gomailer"
 	"github.com/go-gomail/gomail"
 	"github.com/jinzhu/configor"
+	"github.com/k0kubun/pp"
 	"github.com/qorpress/auth/providers/facebook"
 	"github.com/qorpress/auth/providers/github"
 	"github.com/qorpress/auth/providers/google"
 	"github.com/qorpress/auth/providers/twitter"
 	"github.com/qorpress/location"
 	"github.com/qorpress/mailer"
+	"github.com/qorpress/mailer/gomailer"
 	"github.com/qorpress/mailer/logger"
 	"github.com/qorpress/media/oss"
 	"github.com/qorpress/oss/s3"
 	"github.com/qorpress/redirect_back"
 	"github.com/qorpress/session/manager"
+	log "github.com/sirupsen/logrus"
 	"github.com/unrolled/render"
 	// "github.com/qorpress/i18n"
 	// "github.com/qorpress/i18n/backends/yaml"
@@ -63,20 +63,20 @@ type BucketConfig struct {
 }
 
 var Config = struct {
-	DB    struct {
+	DB struct {
 		Name     string `env:"DB_NAME" default:"gopress"`
 		Adapter  string `env:"DB_ADAPTER" default:"mysql"`
 		Host     string `env:"DB_HOST" default:"localhost"`
 		Port     string `env:"DB_PORT" default:"3306"`
 		User     string `env:"DB_USER" default:"root"`
 		Password string `env:"DB_PASSWORD"`
-		Debug bool `env:"DB_DEBUG" default:"false"`
+		Debug    bool   `env:"DB_DEBUG" default:"false"`
 	}
 	App struct {
-		HTTPS bool `default:"false" env:"HTTPS"`
-		Port  uint `default:"4000" env:"PORT"`
+		HTTPS      bool   `default:"false" env:"HTTPS"`
+		Port       uint   `default:"4000" env:"PORT"`
 		LocalesDir string `env:"APP_LOCALES_DIR" default:".config/locales"`
-		Debug bool `env:"APP_DEBUG" default:"false"`		
+		Debug      bool   `env:"APP_DEBUG" default:"false"`
 	}
 	Bucket BucketConfig
 	ApiKey ApiKeyConfig

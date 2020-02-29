@@ -1,5 +1,5 @@
 hash: d16f8f7cdeeb694f7b20d8764da301c556cb8d3efddcd17a5d42708014463508
-updated: 2020-02-29T06:41:50.372136+01:00
+updated: 2020-02-29T08:02:32.870214+01:00
 imports:
 - name: cloud.google.com/go
   version: 602920de6c7b904e71f9510767e7d9879d196fef
@@ -63,15 +63,8 @@ imports:
   version: dc14462fd58732591c7fa58cc8496d6824316a82
 - name: github.com/disintegration/imaging
   version: 879073f2332fabf5a5faa93986ed41598dcf0b62
-- name: github.com/gin-contrib/sse
-  version: 43f0f29dbd2b3f0feeebff91fd9cda22db296938
 - name: github.com/gin-gonic/gin
   version: 094b3fdb393ff8eab16ec293bf49513213955523
-  subpackages:
-  - binding
-  - internal/bytesconv
-  - internal/json
-  - render
 - name: github.com/go-gomail/gomail
   version: 81ebce5c23dfd25c6c67194b37d3dd3f338c98b1
 - name: github.com/golang/protobuf
@@ -110,8 +103,6 @@ imports:
   version: 7e7333ac029d4aad7e88500a30889fcd22489425
 - name: github.com/jmespath/go-jmespath
   version: c2b33e8439af944379acbdd9c3a5fe0bc44bd8a5
-- name: github.com/json-iterator/go
-  version: 7acbb404a45be33f136d6f16fe8f86ca30f1008d
 - name: github.com/k0kubun/pp
   version: 99835366d1cc1593249c150d5c1acfb9036ccb1d
 - name: github.com/konsorten/go-windows-terminal-sequences
@@ -124,10 +115,6 @@ imports:
   version: 67986a7832dcbda29de5c1341b3dec6c6d97511a
 - name: github.com/microcosm-cc/bluemonday
   version: 0a75d7616912ab9beb9cc6f7283ec1917c61b135
-- name: github.com/modern-go/concurrent
-  version: bacd9c7ef1dd9b15be4a9909b8ac7a4e313eec94
-- name: github.com/modern-go/reflect2
-  version: 94122c33edd36123c84d5368cfb2b69df93a0ec8
 - name: github.com/mrjones/oauth
   version: 126b3521945043926caf026a3b969659b6a38d23
 - name: github.com/qorpress/admin
@@ -135,7 +122,7 @@ imports:
 - name: github.com/qorpress/assetfs
   version: 8760d19ffd6b7ffda3756b1932d7ea2bf16fde7c
 - name: github.com/qorpress/auth
-  version: 8a96278314d05bcd9d36671cf38f0ca6d97d3671
+  version: 34fad329a8fec662e08a1659a155ca3655fa0dac
   subpackages:
   - auth_identity
   - claims
@@ -204,10 +191,6 @@ imports:
   version: 77ab282a06b0b4dd37f6ada06e28473bba7e40cb
 - name: github.com/theplant/cldr
   version: 9f76f7ce4ee8058b01f92739cf0d0cceaeda3cb2
-- name: github.com/ugorji/go
-  version: 42bc974514ff101a54c6b72a0e4dee29d96c0b26
-  subpackages:
-  - codec
 - name: github.com/unrolled/render
   version: c524c18295afa687769d69e929289578310c41b8
 - name: golang.org/x/crypto

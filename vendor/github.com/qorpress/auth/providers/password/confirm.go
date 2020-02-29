@@ -6,6 +6,7 @@ import (
 	"net/mail"
 	"path"
 	"reflect"
+	"strings"
 	"time"
 
 	"github.com/qorpress/auth"
@@ -40,6 +41,7 @@ var DefaultConfirmationMailer = func(email string, context *auth.Context, claims
 	return context.Auth.Mailer.Send(
 		mailer.Email{
 			TO:      []mail.Address{{Address: email}},
+			From:    &mail.Address{Address: "jinzhu@example.org"},
 			Subject: ConfirmationMailSubject,
 		}, mailer.Template{
 			Name:    "auth/confirmation",
@@ -61,11 +63,40 @@ var DefaultConfirmationMailer = func(email string, context *auth.Context, claims
 		}))
 }
 
+// DefaultConfirmHandler default send confirm handler
+var DefaultSendConfirmHandler = func(context *auth.Context) error {
+	var (
+		currentUser interface{}
+		authInfo    auth_identity.Basic
+		provider, _ = context.Provider.(*Provider)
+		req         = context.Request
+		tx          = context.Auth.GetDB(req)
+		err         error
+	)
+	req.ParseForm()
+	authInfo.Provider = provider.GetName()
+	authInfo.UID = strings.TrimSpace(req.Form.Get("email"))
+	if tx.Model(context.Auth.AuthIdentityModel).Where(authInfo).Scan(&authInfo).RecordNotFound() {
+		return auth.ErrInvalidAccount
+	}
+
+	if currentUser, err = context.Auth.UserStorer.Get(authInfo.ToClaims(), context); err != nil {
+		return err
+	}
+
+	if err = provider.Config.ConfirmMailer(authInfo.UID, context, authInfo.ToClaims(), currentUser); err != nil {
+		return err
+	}
+
+	context.SessionStorer.Flash(context.Writer, req, session.Message{Message: ConfirmFlashMessage, Type: "success"})
+	context.Auth.Redirector.Redirect(context.Writer, context.Request, "send_confirmation")
+	return nil
+}
+
 // DefaultConfirmHandler default confirm handler
 var DefaultConfirmHandler = func(context *auth.Context) error {
 	var (
-		// authInfo    auth_identity.Basic
-		authInfo    auth_identity.AuthIdentity
+		authInfo    auth_identity.Basic
 		provider, _ = context.Provider.(*Provider)
 		tx          = context.Auth.GetDB(context.Request)
 		token       = context.Request.URL.Query().Get("token")

@@ -1,0 +1,36 @@
+<link rel="stylesheet" media="all" href="{{.AuthURL "/assets/qor_auth.css"}}">
+
+<div class="container qor-auth">
+  <div class="qor-auth-box">
+    {{$flashes := .Flashes}}
+    {{if $flashes}}
+      <ul class="errors">
+        {{range $flash := $flashes}}
+          <li>{{$flash.Message}}</li>
+        {{end}}
+      </ul>
+    {{end}}
+
+
+    {{if .Auth.GetProvider "password"}}
+      <form action="{{.AuthURL "password/login"}}" method="POST">
+        <ul class="auth-form">
+          <li>
+            <label for="email">{{t "email"}}</label>
+            <input type="email" id="email" name="login" placeholder="{{t "email"}}" value="{{.FormValue "login"}}">
+          </li>
+
+          <li>
+            <label for="password">{{t "password"}}</label>
+            <input type="password" class="form-control" id="password" name="password" placeholder="{{t "password"}}">
+          </li>
+
+          <li>
+            <button type="submit" class="button button__primary">{{t "SIGN IN"}}</button>
+          </li>
+        </ul>
+      </form>
+    {{end}}
+
+ </div>
+</div>

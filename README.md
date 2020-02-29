@@ -2,11 +2,6 @@
 
 This example a forked version of qor framework and implements the required patches to make work the qor auth example properly.
 
-## Screenshots
-![login](https://github.com/qorpress/qorpress-auth-example/raw/master/docs/screenshots/signin.png "login")
-![register](https://github.com/qorpress/qorpress-auth-example/raw/master/docs/screenshots/register.png "register")
-![recover password](https://github.com/qorpress/qorpress-auth-example/raw/master/docs/screenshots/recover.png "recover password")
-
 ## Pre-requesistes
 - git
 - docker
@@ -16,7 +11,7 @@ This example a forked version of qor framework and implements the required patch
 #### Fixed
 - ~~Fixed：Unknown column 'basics.provider' in 'where clause')~~
   - https://github.com/qorpress/auth/pull/20/files
-- ~~Fixed: Missing From attribute in mailer~~
+- ~~Fixed: Mgomail: could not send email 1: gomail: invalid message, "From" field is absent~~
   - https://github.com/qorpress/auth/blob/master/providers/password/confirm.go#L43
 
 #### Warning
@@ -64,15 +59,29 @@ go run main.go
 ```
 open http://localhost:4000 in your browser
 
+### Screenshots
+![login](https://github.com/qorpress/qorpress-auth-example/raw/master/docs/screenshots/signin.png "login")
+![register](https://github.com/qorpress/qorpress-auth-example/raw/master/docs/screenshots/register.png "register")
+![recover password](https://github.com/qorpress/qorpress-auth-example/raw/master/docs/screenshots/recover.png "recover password")
+
 ### Links
 - Login - http://localhost:4000/auth/login
 - Register - http://localhost:4000/auth/register
 - New Password - http://localhost:4000/auth/password/new
 
+### Troubleshooting
+- If you use a gmail account, do not forget to actvate less secure apps (https://myaccount.google.com/lesssecureapps)
+
 ### To do
+* add home page with status message for logged in or not
+* figure out how works the github,twitter,facebook,google sign-ons
 * compile templates into an asset.go file
 * multi-stage docker builder
 * use the i18 package for loading login/register form translation
+* re-sent validation email function
+* failed to find template: auth/confirmation.text
+* failed to find template: auth/confirmation.html
+* failed to find template: auth/confirmation
 
 ### Bugs
 * cannot not use go.mod as it doesn't not copy template files (that's why we are using glide)
