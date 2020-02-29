@@ -40,7 +40,6 @@ var DefaultConfirmationMailer = func(email string, context *auth.Context, claims
 	return context.Auth.Mailer.Send(
 		mailer.Email{
 			TO:      []mail.Address{{Address: email}},
-			From:        &mail.Address{Address: "jinzhu@example.org"},
 			Subject: ConfirmationMailSubject,
 		}, mailer.Template{
 			Name:    "auth/confirmation",

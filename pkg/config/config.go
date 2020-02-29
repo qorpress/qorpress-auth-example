@@ -3,8 +3,8 @@ package config
 import (
 	"os"
 	"strconv"
-	"log"
 
+	log "github.com/sirupsen/logrus"
 	"github.com/k0kubun/pp"
 	"github.com/qorpress/mailer/gomailer"
 	"github.com/go-gomail/gomail"

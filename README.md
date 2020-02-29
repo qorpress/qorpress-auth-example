@@ -3,7 +3,9 @@
 This example a forked version of qor framework and implements the required patches to make work the qor auth example properly.
 
 ## Screenshots
-
+![login](https://github.com/qorpress/qorpress-auth-example/raw/master/docs/screenshots/signing.png "login")
+![register](https://github.com/qorpress/qorpress-auth-example/raw/master/docs/screenshots/register.png "register")
+![recover password](https://github.com/qorpress/qorpress-auth-example/raw/master/docs/screenshots/recover.png "recover password")
 
 ## Pre-requesistes
 - git
@@ -61,6 +63,11 @@ cd $GOPATH/src/github.com/qorpress/qorpress-auth-example
 go run main.go
 ```
 open http://localhost:4000 in your browser
+
+### Links
+- Login - http://localhost:4000/auth/login
+- Register - http://localhost:4000/auth/register
+- New Password - http://localhost:4000/auth/password/new
 
 ### To do
 * compile templates into an asset.go file

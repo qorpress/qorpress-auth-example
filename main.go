@@ -18,8 +18,8 @@ import (
   _ "github.com/mattn/go-sqlite3"
   "github.com/qorpress/auth_themes/clean"
 
-  "github.com/qorpress/qorpress-auth-example/config"
-  "github.com/qorpress/qorpress-auth-example/models"
+  "github.com/qorpress/qorpress-auth-example/pkg/config"
+  "github.com/qorpress/qorpress-auth-example/pkg/models"
 )
 
 var (
@@ -47,7 +47,7 @@ func init() {
   // Migrate AuthIdentity model, AuthIdentity will be used to save auth info, like username/password, oauth token, you could change that.
   // gormDB.AutoMigrate(&auth_identity.AuthIdentity{})
 
-  gormDB.LogMode(true)
+  gormDB.LogMode(config.Config.DB.Debug)
   
   gormDB.AutoMigrate(
     &models.User{},
@@ -61,27 +61,27 @@ func init() {
 
   // Allow use Github
   Auth.RegisterProvider(github.New(&github.Config{
-    ClientID:     config.,
-    ClientSecret: "github client secret",
+    ClientID:     config.Config.Auth.Github.ClientID,
+    ClientSecret: config.Config.Auth.Github.ClientSecret,
   }))
 
   // Allow use Google
   Auth.RegisterProvider(google.New(&google.Config{
-    ClientID:     "google client id",
-    ClientSecret: "google client secret",
+    ClientID:     config.Config.Auth.Google.ClientID,
+    ClientSecret: config.Config.Auth.Google.ClientID,
     AllowedDomains: []string{}, // Accept all domains, instead you can pass a whitelist of acceptable domains
   }))
 
   // Allow use Facebook
   Auth.RegisterProvider(facebook.New(&facebook.Config{
-    ClientID:     "facebook client id",
-    ClientSecret: "facebook client secret",
+    ClientID:     config.Config.Auth.Facebook.ClientID,
+    ClientSecret: config.Config.Auth.Facebook.ClientID,
   }))
 
   // Allow use Twitter
   Auth.RegisterProvider(twitter.New(&twitter.Config{
-    ClientID:     "twitter client id",
-    ClientSecret: "twitter client secret",
+    ClientID:     config.Config.Auth.Twitter.ClientID,
+    ClientSecret: config.Config.Auth.Twitter.ClientID,
   }))
 
 }
@@ -93,9 +93,14 @@ func main() {
   mux.Handle("/auth/", Auth.NewServeMux())
 
   router := gin.Default()
+
+  if !config.Config.App.Debug {
+    gin.SetMode(gin.ReleaseMode)
+  }
+
   router.Any("/*resources", gin.WrapH(mux))
 
-  router.Run(fmt.Sprintf("%s:%s", "", config.App.Port))
+  router.Run(fmt.Sprintf("%s:%d", "", config.Config.App.Port))
 
   // http.ListenAndServe(":9000", manager.SessionManager.Middleware(RedirectBack.Middleware(mux)))
   // http.ListenAndServe(":9000", manager.SessionManager.Middleware(mux))

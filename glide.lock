@@ -1,14 +1,14 @@
 hash: d16f8f7cdeeb694f7b20d8764da301c556cb8d3efddcd17a5d42708014463508
-updated: 2020-02-28T17:47:47.071135+01:00
+updated: 2020-02-29T06:41:50.372136+01:00
 imports:
 - name: cloud.google.com/go
-  version: 7abb1e3eb67a216e4fce0dc31bea4f08315b1576
+  version: 602920de6c7b904e71f9510767e7d9879d196fef
   subpackages:
   - compute/metadata
 - name: github.com/asaskevich/govalidator
   version: 475eaeb164960a651e97470412a7d3b0c5036105
 - name: github.com/aws/aws-sdk-go
-  version: 284a491980f8fd38e09dc1c7e996e02aa5ed5b5e
+  version: 90ec15848eb44d569328d31dcc175fed0f7df961
   subpackages:
   - aws
   - aws/arn
@@ -114,6 +114,8 @@ imports:
   version: 7acbb404a45be33f136d6f16fe8f86ca30f1008d
 - name: github.com/k0kubun/pp
   version: 99835366d1cc1593249c150d5c1acfb9036ccb1d
+- name: github.com/konsorten/go-windows-terminal-sequences
+  version: f55edac94c9bbba5d6182a4be46d86a2c9b5b50e
 - name: github.com/mattn/go-colorable
   version: 4e32bdb9fe4eefa9b10cb112e44debf77784ff7a
 - name: github.com/mattn/go-isatty
@@ -198,6 +200,8 @@ imports:
   version: 7896e5a38acdc78617e244dcbca4f0a6bbdea9da
 - name: github.com/rainycape/unidecode
   version: cb7f23ec59bec0d61b19c56cd88cee3d0cc1870c
+- name: github.com/sirupsen/logrus
+  version: 77ab282a06b0b4dd37f6ada06e28473bba7e40cb
 - name: github.com/theplant/cldr
   version: 9f76f7ce4ee8058b01f92739cf0d0cceaeda3cb2
 - name: github.com/ugorji/go
