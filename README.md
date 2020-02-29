@@ -3,7 +3,7 @@
 This example a forked version of qor framework and implements the required patches to make work the qor auth example properly.
 
 ## Screenshots
-![login](https://github.com/qorpress/qorpress-auth-example/raw/master/docs/screenshots/signing.png "login")
+![login](https://github.com/qorpress/qorpress-auth-example/raw/master/docs/screenshots/signin.png "login")
 ![register](https://github.com/qorpress/qorpress-auth-example/raw/master/docs/screenshots/register.png "register")
 ![recover password](https://github.com/qorpress/qorpress-auth-example/raw/master/docs/screenshots/recover.png "recover password")
 
