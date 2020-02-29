@@ -9,7 +9,7 @@ docker-build:
 
 ## docker-run		: 	run web interface.
 docker-run:
-	@docker run -ti -p 9000:9000 -v $(PWD)/.config/gopress.yml:/opt/qor/.config/gopress.yml qorpress/qorpress-auth-example
+	@docker run -ti -p 4000:4000 -v $(PWD)/.config/gopress.yml:/opt/qor/.config/gopress.yml qorpress/qorpress-auth-example
 .PHONY: docker-run
 
 ## deps			: 	install dependencies
