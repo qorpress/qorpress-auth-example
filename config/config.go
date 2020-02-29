@@ -63,8 +63,6 @@ type BucketConfig struct {
 }
 
 var Config = struct {
-	HTTPS bool `default:"false" env:"HTTPS"`
-	Port  uint `default:"4000" env:"PORT"`
 	DB    struct {
 		Name     string `env:"DB_NAME" default:"gopress"`
 		Adapter  string `env:"DB_ADAPTER" default:"mysql"`
@@ -75,6 +73,8 @@ var Config = struct {
 		Debug bool `env:"DB_DEBUG" default:"false"`
 	}
 	App struct {
+		HTTPS bool `default:"false" env:"HTTPS"`
+		Port  uint `default:"4000" env:"PORT"`
 		LocalesDir string `env:"APP_LOCALES_DIR" default:".config/locales"`
 		Debug bool `env:"APP_DEBUG" default:"false"`		
 	}

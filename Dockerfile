@@ -9,9 +9,9 @@ RUN cd /go/src/github.com/qorpress/qorpress-auth-example \
 	&& go get github.com/Masterminds/glide \
 	&& go get -v
 
-RUN go build -v
+RUN go install
 
 # Container configuration
 EXPOSE 4000
 
-CMD ["/go/src/github.com/qorpress/qorpress-auth-example/qorpress-auth-example"]
+CMD ["/go/bin/qorpress-auth-example"]

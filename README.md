@@ -41,9 +41,16 @@ This version allows to run the example with mysql container.
 
 ```bash
 cd $GOPATH/src/github.com/qorpress/qorpress-auth-example
-docker-compose up --build
-open http://localhost:4000
+docker-compose up -d --build
 ```
+open http://localhost:4000 in your browser
+
+or
+```bash
+docker build -t qorpress/qorpress-auth-example --no-cache .
+docker run -ti -p 4000:4000 -v ${PWD}/.config/gopress.yml:/go/bin/.config/gopress.yml qorpress/qorpress-auth-example
+```
+open http://localhost:4000 in your browser
 
 #### Locally (for dev)
 
@@ -52,8 +59,8 @@ This version allows to run the example with an sqlite database.
 ```bash
 cd $GOPATH/src/github.com/qorpress/qorpress-auth-example
 go run main.go
-open http://localhost:4000
 ```
+open http://localhost:4000 in your browser
 
 ### To do
 * compile templates into an asset.go file
