@@ -1,23 +1,24 @@
 # QorPress Auth Example
 
-## Description
 This example a forked version of qor framework and implements the required patches to make work the qor auth example properly.
 
-### Fixed
-* Fixed：Unknown column 'basics.provider' in 'where clause')
-  - https://github.com/qorpress/auth/pull/20/files
-* Fixed: Missing From attribute in mailer
-  - 
+## Screenshots
 
-### Warning
-All packages included in this program are forks from the original qor framework.
-https://github.com/qorpress?utf8=%E2%9C%93&q=&type=fork&language=
 
-### Pre-requesistes
+## Pre-requesistes
 - git
 - docker
 - docker compose
 - golang 1.13/1.14
+
+#### Fixed
+- ~~Fixed：Unknown column 'basics.provider' in 'where clause')~~
+  - https://github.com/qorpress/auth/pull/20/files
+- ~~Fixed: Missing From attribute in mailer~~
+  - https://github.com/qorpress/auth/blob/master/providers/password/confirm.go#L43
+
+#### Warning
+All packages included in this program are forks from the original qor framework.
 
 ### Install
 ```bash
@@ -41,7 +42,7 @@ This version allows to run the example with mysql container.
 ```bash
 cd $GOPATH/src/github.com/qorpress/qorpress-auth-example
 docker-compose up --build
-open http://localhost:9000
+open http://localhost:4000
 ```
 
 #### Locally (for dev)
@@ -51,7 +52,7 @@ This version allows to run the example with an sqlite database.
 ```bash
 cd $GOPATH/src/github.com/qorpress/qorpress-auth-example
 go run main.go
-open http://localhost:9000
+open http://localhost:4000
 ```
 
 ### To do
