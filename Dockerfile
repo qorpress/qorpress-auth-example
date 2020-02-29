@@ -1,4 +1,4 @@
-FROM golang:1.14-alpine AS builder
+FROM golang:1.14-alpine
 
 RUN apk add --no-cache git openssl ca-certificates gcc musl-dev
 
@@ -12,6 +12,6 @@ RUN cd /go/src/github.com/qorpress/qorpress-auth-example \
 RUN go build -v
 
 # Container configuration
-EXPOSE 9000
+EXPOSE 4000
 
-CMD ["/opt/qor/bin/qorpress-auth-example"]
+CMD ["/go/src/github.com/qorpress/qorpress-auth-example/qorpress-auth-example"]

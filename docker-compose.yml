@@ -4,13 +4,31 @@ services:
 
   app:
     image: qorpress/qorpress-auth-example
-    container_name: qorpress-auth-example
+    container_name: ${NAMESPACE}-app
     build:
       context: .
       dockerfile: Dockerfile
     ports:
-    - "9000:9000"
+    - "4000:4000"
     volumes:
     - ./.config/gopress.yml:/opt/qor/.config/gopress.yml
     command: ["/opt/qor/bin/qorpress-auth-example"]
     restart: unless-stopped
+
+  mysql:
+    image: mysql:5.7
+    container_name: ${NAMESPACE}-db
+    ports:
+    - "3306:3306"
+    volumes:
+    - ./.config/db:/etc/mysql/conf.d
+    - db-data:/var/lib/mysql
+    environment:
+      MYSQL_DATABASE: qor_example
+      MYSQL_PASSWORD: qor_example
+      MYSQL_ROOT_PASSWORD: 'qor_password'
+      MYSQL_USER: qor_user
+    restart: unless-stopped
+
+volumes:
+  db-data:

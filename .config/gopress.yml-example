@@ -1,3 +1,8 @@
+app:
+  debug: true
+  locales: .config/locales
+  port: 4000
+
 db:
   adapter: mysql
   host: 127.0.0.1
@@ -5,13 +10,7 @@ db:
   name: gopress_auth
   user: root
   password: xxxxxxxxx
-
-api:
-  twitter:
-    consumerkey: xxxxxxxxx 
-    consumersecret: xxxxxxxxx
-    accesstoken: xxxxxxxxx-xxxxxxxxx
-    accesssecret: xxxxxxxxx
+  debug: true
 
 auth:
   github:
@@ -33,49 +32,3 @@ smtp:
   user: xxxxxx@gmail.com
   password: xxxxx
   site: http://x0rzkov.com
-
-schema:
-  - name: Sample0
-    columnList:
-      - name: ID
-        dataType: int64
-        jsonTag:  id
-        formTag:  id
-        gormTag:
-          - tag:  AUTO_INCREMENT
-          - tag:  NOT_NULL
-          - tag:  PRIMARY_KEY
-      - name: LastName
-        dataType: string
-        jsonTag:  lastName
-        formTag:  lastNameName
-        gormTag:
-          - tag:  NOT_NULL
-      - name: FirstName
-        dataType: string
-        jsonTag:  firstName
-        formTag:  firstName
-        gormTag:
-          - tag:  NOT_NULL
-  - name: Sample1
-    columnList:
-      - name: ID1
-        dataType: int64
-        jsonTag:  id1
-        formTag:  id1
-        gormTag:
-          - tag:  AUTO_INCREMENT
-          - tag:  NOT_NULL
-          - tag:  PRIMARY_KEY
-      - name: LastName1
-        dataType: string
-        jsonTag:  lastName1
-        formTag:  lastNameName1
-        gormTag:
-          - tag:  NOT_NULL
-      - name: FirstName1
-        dataType: string
-        jsonTag:  firstName1
-        formTag:  firstName1
-        gormTag:
-          - tag:  NOT_NULL

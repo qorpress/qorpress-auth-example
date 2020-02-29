@@ -25,14 +25,8 @@ import (
 var (
   // Initialize gorm DB
   gormDB, _ = gorm.Open("sqlite3", "qorpress.db")
-  // Initialize Auth with configuration
-  /*
-  Auth = auth.New(&auth.Config{
-    DB: gormDB,
-    Redirector: auth.Redirector{RedirectBack},
-  })
-  */
 
+  // Initialize Auth with configuration
   Auth = clean.New(&auth.Config{
     DB:         gormDB,
     // NO NEED TO CONFIG RENDER, AS IT'S CONFIGED IN CLEAN THEME
@@ -41,6 +35,7 @@ var (
     UserModel:  models.User{},
     Redirector: auth.Redirector{RedirectBack},
   })
+
 )
 
 var RedirectBack = redirect_back.New(&redirect_back.Config{
@@ -66,7 +61,7 @@ func init() {
 
   // Allow use Github
   Auth.RegisterProvider(github.New(&github.Config{
-    ClientID:     "github client id",
+    ClientID:     config.,
     ClientSecret: "github client secret",
   }))
 
@@ -100,7 +95,7 @@ func main() {
   router := gin.Default()
   router.Any("/*resources", gin.WrapH(mux))
 
-  router.Run(fmt.Sprintf("%s:%s", "", "9000"))
+  router.Run(fmt.Sprintf("%s:%s", "", config.App.Port))
 
   // http.ListenAndServe(":9000", manager.SessionManager.Middleware(RedirectBack.Middleware(mux)))
   // http.ListenAndServe(":9000", manager.SessionManager.Middleware(mux))
