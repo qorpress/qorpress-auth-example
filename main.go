@@ -3,9 +3,9 @@ package main
 import (
 	"fmt"
 	"net/http"
-  // "io/ioutil"
+	// "io/ioutil"
 	// "path/filepath"
-  // "html/template"
+	// "html/template"
 
 	"github.com/jinzhu/gorm"
 	_ "github.com/mattn/go-sqlite3"
@@ -17,14 +17,14 @@ import (
 	"github.com/qorpress/auth/providers/password"
 	"github.com/qorpress/auth/providers/twitter"
 	"github.com/qorpress/auth_themes/clean"
-  "github.com/qorpress/redirect_back"
-  "github.com/qorpress/session/manager"
-  "github.com/qorpress/i18n"
-  // "github.com/qorpress/qor"
+	"github.com/qorpress/i18n"
+	"github.com/qorpress/redirect_back"
+	"github.com/qorpress/session/manager"
+	// "github.com/qorpress/qor"
 	// "github.com/qorpress/qor/utils"
-  // "github.com/qorpress/render"
-  // "github.com/qorpress/i18n/backends/yaml"
-  // "github.com/gin-gonic/gin"
+	// "github.com/qorpress/render"
+	// "github.com/qorpress/i18n/backends/yaml"
+	// "github.com/gin-gonic/gin"
 
 	"github.com/qorpress/qorpress-auth-example/pkg/config"
 	"github.com/qorpress/qorpress-auth-example/pkg/models"
@@ -34,7 +34,7 @@ var (
 	// Initialize gorm DB
 	gormDB, _ = gorm.Open("sqlite3", "qorpress.db")
 
-  I18n *i18n.I18n
+	I18n *i18n.I18n
 
 	// Auth = theme.New(&auth.Config{
 	// Initialize Auth with configuration
@@ -57,34 +57,34 @@ func init() {
 	// Migrate AuthIdentity model, AuthIdentity will be used to save auth info, like username/password, oauth token, you could change that.
 	// gormDB.AutoMigrate(&auth_identity.AuthIdentity{})
 
-  /*
-	yamlBackend := yaml.New()
-	I18n = i18n.New(yamlBackend)
+	/*
+			yamlBackend := yaml.New()
+			I18n = i18n.New(yamlBackend)
 
-	filePath := filepath.Join(utils.AppRoot, ".config/locales/en-US.yml")
+			filePath := filepath.Join(utils.AppRoot, ".config/locales/en-US.yml")
 
-	if content, err := ioutil.ReadFile(filePath); err == nil {
-		translations, err := yamlBackend.LoadYAMLContent(content)
-		if err != nil {
-			fmt.Println(err.Error())
-		}
-		for _, translation := range translations {
-			I18n.AddTranslation(translation)
-		}
-	} else if err != nil {
-		fmt.Println(err.Error())
-	}
+			if content, err := ioutil.ReadFile(filePath); err == nil {
+				translations, err := yamlBackend.LoadYAMLContent(content)
+				if err != nil {
+					fmt.Println(err.Error())
+				}
+				for _, translation := range translations {
+					I18n.AddTranslation(translation)
+				}
+			} else if err != nil {
+				fmt.Println(err.Error())
+			}
 
-  Auth.Render = render.New(&render.Config{
-      FuncMapMaker: func(render *render.Render, req *http.Request, w http.ResponseWriter) template.FuncMap {
-        return template.FuncMap{
-          "t": func(key string, args ...interface{}) template.HTML {
-            return I18n.T(utils.GetLocale(&qor.Context{Request: req}), key, args...)
-          },
-        }
-      },
-  })
-  */
+		  Auth.Render = render.New(&render.Config{
+		      FuncMapMaker: func(render *render.Render, req *http.Request, w http.ResponseWriter) template.FuncMap {
+		        return template.FuncMap{
+		          "t": func(key string, args ...interface{}) template.HTML {
+		            return I18n.T(utils.GetLocale(&qor.Context{Request: req}), key, args...)
+		          },
+		        }
+		      },
+		  })
+	*/
 
 	gormDB.LogMode(config.Config.DB.Debug)
 
@@ -130,13 +130,13 @@ func main() {
 	// Mount Auth to Router
 	mux.Handle("/auth/", Auth.NewServeMux())
 
-  /*
-	router := gin.Default()
+	/*
+		router := gin.Default()
 
-	if !config.Config.App.Debug {
-		gin.SetMode(gin.ReleaseMode)
-	}
-  */
+		if !config.Config.App.Debug {
+			gin.SetMode(gin.ReleaseMode)
+		}
+	*/
 
 	// router.Any("/*resources", gin.WrapH(mux))
 	// router.Run(fmt.Sprintf("%s:%d", "", config.Config.App.Port))
